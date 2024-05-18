@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit and Vegetable Scientific Names</title>
+    <link rel="icon" type="image/png" href="vegetable.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js"></script>  
+</head>
+<body>
+    <div class="navbar">
+        <a href="calculator.html">Calculator</a>
+        <a href="index.html">F&V</a>
+    </div>
+  
+    <video id="video-background" autoplay muted loop>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <div id="container">
+        <h2>Search for Fruit or Vegetable Names</h2>
+        <input type="text" id="searchInput" placeholder="Enter fruit or vegetable name">
+        <div id="results"></div>
+    </div>
+<script> document.getElementById("searchInput").addEventListener("input", searchScientificName);</script>
+</body>
+</html>

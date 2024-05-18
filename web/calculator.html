@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sum and Difference Calculator</title>
+<link rel="icon" type="image/png" href="vegetable.png">
+<script src="script/calcu.js"></script>
+<style>
+    body {
+        background-image: url(banner.png);
+        background-repeat: no-repeat;
+        background-size:cover ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+     /* Navigation bar styles */
+     .navbar {
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure the navbar stays on top of other content */
+    }
+
+    .navbar a:hover {
+
+        background-color: #3e943e;
+        transition: 1s;
+        border-radius: 10px;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 20px 40px;
+        text-decoration: none;
+        margin-left: 30px;
+    }
+
+    .calculator-container {
+        padding-top: 50px; /* Adjust padding to accommodate fixed navbar */
+    }
+
+    /* Calculator styles */
+    .calculator {
+        background-color:rgba(255,255,255,0.5);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #161816;
+    }
+
+    #sumResult,
+    #differenceResult {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+  <!-- Navigation bar -->
+<div class="navbar">
+    <a href="calculator.html">Calculator</a>
+    <a href="index.html">F&V</a>
+</div>
+
+<!-- Calculator container -->
+<div class="calculator-container">
+    <div class="calculator">
+        <h2>Sum and Difference Calculator</h2>
+
+        <div>
+            <label for="numbers">Enter numbers (separated by comma):</label><br>
+            <input type="text" id="numbers">
+            <button onclick="calculateSum()">Calculate Sum</button>
+        </div>
+
+        <div id="sumResult" style="display:none;">
+            <label for="sum">Sum:</label><br>
+            <input type="text" id="sum" readonly>
+        </div>
+
+        <div>
+            <label for="difference">Enter a number to find the difference:</label><br>
+            <input type="number" id="difference">
+            <button onclick="calculateDifference()">Calculate Difference</button>
+        </div>
+
+        <div id="differenceResult" style="display:none;">
+            <label for="differenceValue">Difference:</label><br>
+            <input type="text" id="differenceValue" readonly>
+        </div>
+        <br>
+
+        <button onclick="clearInputs()">Clear</button>
+    </div>
+</div>
+
+
+
+</body>
+</html>
