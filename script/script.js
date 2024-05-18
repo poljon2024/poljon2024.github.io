@@ -204,6 +204,8 @@ const data = {
 "jujube": "Ziziphus jujuba",
 "kumquat": "Fortunella margarita",
 "vigna": "Vigna spp",
+"vigna": "Capsicum annuum",
+
             
         };
 
