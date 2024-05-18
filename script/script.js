@@ -205,6 +205,7 @@ const data = {
 "kumquat": "Fortunella margarita",
 "vigna": "Vigna spp",
 "capsicum": "Capsicum annuum",
+"passion fruit" : "Passiflora edulis",
 
             
         };
