@@ -1,0 +1,106 @@
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+    object-fit: cover;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar stays on top of other content */
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 40px;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.navbar a:hover {
+    background-color: #3e943e;
+    transition: 1s;
+    border-radius: 10px;
+}
+
+#container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: glow 10s linear infinite; 
+    margin-top: 60px; /* Adjust margin to accommodate fixed navbar */
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#results {
+    font-size: 18px;
+    text-align: center;
+    color: #555;
+}
+
+#results span {
+    color: #046324;
+    font-weight: bold;
+}
+#results button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Center text */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px; /* Spacing from the scientific name */
+    cursor: pointer; /* Cursor style */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+/* Change button background color on hover */
+#results button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* Change button background color on click */
+#results button:active {
+    background-color: #3e8e41; /* Dark green */
+}
