@@ -97,8 +97,8 @@
 <body>
   <!-- Navigation bar -->
 <div class="navbar">
-    <a href="CALCULATOR">Calculator</a>
-    <a href="F&VLIST">F&V</a>
+    <a href="calculator">Calculator</a>
+    <a href="index">F&V</a>
 </div>
 
 <!-- Calculator container -->
