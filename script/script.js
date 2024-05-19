@@ -44,6 +44,7 @@ const data = {
 "tea": "Camellia sinensis",
 "bell Pepper": "Capsicum annuum",
 "pepper": "Capsicum spp",
+"capsicum":"Capsicumm annuum",
 "papaya": "Carica papaya",
 "caraway": "Carum carvi",
 "pecan": "Carya illinoensis",
@@ -204,33 +205,86 @@ const data = {
 "jujube": "Ziziphus jujuba",
 "kumquat": "Fortunella margarita",
 "vigna": "Vigna spp",
-"capsicum": "Capsicum annuum",
 "passion fruit" : "Passiflora edulis",
-
             
         };
 
-      
-        function searchScientificName() {
-            const searchInput = document.getElementById("searchInput").value.toLowerCase();
-            const resultsContainer = document.getElementById("results");
-            const scientificName = data[searchInput];
-            if (scientificName) {
-                resultsContainer.innerHTML = "<span>Scientific Name:</span> " + scientificName + " <button onclick='copyScientificName(\"" + scientificName + "\")'>Copy</button>";
-            } else {
-                resultsContainer.innerHTML = "Scientific name not found for '" + searchInput + "'";
-            }
-        }
 
-        function copyScientificName(name) {
-            const textarea = document.createElement('textarea');
-            textarea.value = name;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            
-        }
+      
+        let searchedItems = [];
+
+function searchScientificName() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const resultsContainer = document.getElementById("results");
+    const scientificName = data[searchInput];
+    if (scientificName) {
+        // If the scientific name is found, add it to the searchedItems array
+        searchedItems.push({ name: searchInput, scientificName: scientificName });
+    }
+    // Display all searched items
+    displaySearchedItems();
+}
+
+function addScientificName() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const scientificName = data[searchInput];
+    if (scientificName) {
+        // If the scientific name is found, add it to the searchedItems array
+        searchedItems.push({ name: searchInput, scientificName: scientificName });
+        // Display all searched items
+        displaySearchedItems();
+    } else {
+        const resultsContainer = document.getElementById("results");
+        const notFoundMessage = document.createElement("div");
+        notFoundMessage.innerHTML = `Scientific name not found for '${searchInput}'`;
+        resultsContainer.appendChild(notFoundMessage);
+    }
+}
+
+function deleteItem(index) {
+    searchedItems.splice(index, 1);
+    displaySearchedItems();
+}
+
+function displaySearchedItems() {
+    const resultsContainer = document.getElementById("results");
+    // Clear previous results
+    resultsContainer.innerHTML = "";
+    // Display all searched items
+    searchedItems.forEach(item => {
+        const newResultItem = document.createElement("div");
+        newResultItem.classList.add("result-item");
+        newResultItem.innerHTML = `
+            <span class="item-name">${item.name}</span>: ${item.scientificName} 
+            <button onclick='copyScientificName("${item.scientificName}")'>Copy</button>
+            <button onclick='deleteItem("${item.name}")'>Delete</button>
+            <span class="sum-result"></span>
+        `;
+        resultsContainer.appendChild(newResultItem);
+    });
+
+    // Add a button to calculate total sum
+    const totalSumButton = document.createElement("button");
+    totalSumButton.textContent = "Calculate Total Sum";
+    totalSumButton.addEventListener("click", calculateTotalSum);
+    resultsContainer.appendChild(totalSumButton);
+}
+
+function copyScientificName(name) {
+    const textarea = document.createElement('textarea');
+    textarea.value = name;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+}
+
+function deleteItem(name) {
+    // Remove the item from searchedItems array
+    searchedItems = searchedItems.filter(item => item.name !== name);
+    // Update the displayed items
+    displaySearchedItems();
+}
 
        
     
