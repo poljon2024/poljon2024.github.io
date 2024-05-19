@@ -170,6 +170,7 @@ const data = {
 "wild Rose": "Rosa davurica",
 "rosemary": "Rosmarinus officinalis",
 "bramble": "Rubus spp",
+"raspberry": "Rubus spp",
 "sugarcane": "Saccharum officinarum",
 "sage": "Salvia officinalis",
 "black Salsify": "Scorzonera hispanica",
