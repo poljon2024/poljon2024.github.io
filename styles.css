@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url(banner1.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    background: url('https://www.transparenttextures.com/patterns/food.png');
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    color: #388e3c;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.input-section, .genus-section, .summary-section, .random-section, .clear-section {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #56ab2f;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #56ab2f;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #8bc34a;
+    color: white;
+}
+
+td {
+    background-color: #f1f8e9;
+}
+
+.genus-section p {
+    display: inline-block;
+    margin: 0;
+    font-size: 16px;
+}
+
+.summary-section p, .random-section p {
+    font-size: 16px;
+}
+
+.random-section {
+    display: flex;
+    align-items: center;
+}
+
+.random-section input {
+    margin-right: 10px;
+}
+
+.summary-section p {
+    margin: 5px 0;
+}
+
+.clear-section {
+    text-align: right;
+}
+
+#genusName {
+    font-weight: bold;
+    color: #388e3c;
+}
+
+#genusDisplay {
+    color: #d32f2f;
+}
