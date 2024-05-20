@@ -270,7 +270,7 @@ function addToTable() {
 
 function deleteRow(row) {
     const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
-    table.deleteRow(row.rowIndex - 1); // Subtract 1 to adjust for header row
+    table.deleteRow(row.rowIndex - 1);
     updateSummary();
 }
 
@@ -303,7 +303,6 @@ function calculateDifference() {
     document.getElementById('kilogramsDifference').innerText = kilogramsDifference;
 }
 
-// Add event listener to trigger search on "Enter" key press
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         searchGenus();
@@ -320,27 +319,27 @@ document.getElementById('addTab').addEventListener('keypress', function(event) {
 });
 
 function clearData() {
-    // Clear the search input and genus display
+   
     document.getElementById('searchInput').value = '';
     document.getElementById('genusDisplay').innerText = '';
 
-    // Clear the input fields for quantity and kilograms
+    
     document.getElementById('quantityInput').value = '';
     document.getElementById('kilogramInput').value = '';
 
-    // Clear the result table
+    
     const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
     table.innerHTML = '';
 
-    // Clear the summary section
+
     document.getElementById('totalQuantity').innerText = '0';
     document.getElementById('totalKilograms').innerText = '0';
 
-    // Clear the random quantity and kilograms input fields
+    
     document.getElementById('randomQuantityInput').value = '';
     document.getElementById('randomKilogramInput').value = '';
 
-    // Clear the difference in quantity and kilograms
+  
     document.getElementById('quantityDifference').innerText = '0';
     document.getElementById('kilogramsDifference').innerText = '0';
 }
@@ -352,16 +351,16 @@ function copyToClipboard(text, button) {
     document.execCommand('copy');
     document.body.removeChild(tempInput);
     
-    // Change appearance of button
+   
     button.textContent = 'Copied';
     button.disabled = true;
-    button.style.backgroundColor = '#7FFF00'; // Change button color to green
+    button.style.backgroundColor = '#7FFF00'; 
     
-    // Reset appearance after a short delay
+   
     setTimeout(function() {
         button.textContent = 'Copy';
         button.disabled = false;
-        button.style.backgroundColor = ''; // Reset button color
-    }, 500); // Reset appearance after 2 seconds
+        button.style.backgroundColor = '';
+    }, 500);
 }
 
