@@ -219,6 +219,7 @@ function searchGenus() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const genus = genusList[input];
     document.getElementById('genusDisplay').innerText = genus ? genus : 'Not Found';
+    
 }
 
 function addToTable() {
@@ -306,9 +307,17 @@ function calculateDifference() {
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         searchGenus();
+
+        document.getElementById('quantityInput').focus();
     }
 });
+document.getElementById('addTab').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        addToTable();
 
+        document.getElementById('searchInput').focus();
+    }
+});
 
 function clearData() {
     // Clear the search input and genus display

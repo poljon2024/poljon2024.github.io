@@ -14,11 +14,11 @@
             <input type="text" id="searchInput" placeholder="Enter fruit or vegetable name">
             <button onclick="searchGenus()">Search</button>
         </div>
-        <div class="genus-section">
+        <div id="addTab" class="genus-section">
             <p id="genusName">Genus: <span id="genusDisplay"></span></p>
-            <input type="number" id="quantityInput" placeholder="Enter quantity" min="1">
-            <input type="number" id="kilogramInput" placeholder="Enter kilograms" step="0.1" min="0">
-            <button onclick="addToTable()">Add</button>
+            <input  type="number" id="quantityInput" placeholder="Enter quantity" min="1" >
+            <input  type="number" id="kilogramInput" placeholder="Enter kilograms" step="0.1" min="0">
+            <button  onclick="addToTable()">Add</button>
         </div>
         <table id="resultTable">
             <thead>
