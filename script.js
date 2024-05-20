@@ -227,6 +227,11 @@ function addToTable() {
     const quantity = document.getElementById('quantityInput').value;
     const kilograms = document.getElementById('kilogramInput').value;
 
+    document.getElementById('searchInput').value = '';
+    document.getElementById('genusDisplay').innerText = '';
+    document.getElementById('quantityInput').value = '';
+    document.getElementById('kilogramInput').value = '';
+
     if (genus &&name && quantity && kilograms) {
         const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
         const newRow = table.insertRow();
@@ -280,8 +285,8 @@ function updateSummary() {
         totalKilograms += kilograms;
     }
 
-    document.getElementById('totalQuantity').innerText = totalQuantity; // Round to 2 decimal places
-    document.getElementById('totalKilograms').innerText = totalKilograms; // Round to 2 decimal places
+    document.getElementById('totalQuantity').innerText = totalQuantity;
+    document.getElementById('totalKilograms').innerText = totalKilograms; 
 }
 
 function calculateDifference() {
@@ -348,6 +353,6 @@ function copyToClipboard(text, button) {
         button.textContent = 'Copy';
         button.disabled = false;
         button.style.backgroundColor = ''; // Reset button color
-    }, 1000); // Reset appearance after 2 seconds
+    }, 500); // Reset appearance after 2 seconds
 }
 
