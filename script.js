@@ -138,7 +138,7 @@ const genusList = {
 "banana": "Musa acuminata",
 "banana leaves": "Musa acuminata"
 "plantain": "Musa paradisiaca",
-"green banana": "Musa paradisiaca","
+"green banana": "Musa paradisiaca",
 "abaca": "Musa textilis",
 "rambutan": "Nephelium lappaceum",
 "tobacco": "Nicotiana tabacum",
