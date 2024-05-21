@@ -130,6 +130,7 @@ const genusList = {
 "peppermint": "Mentha × piperita",
 "medlar": "Mespilus germanica",
 "bitter melon": "Momordica charantia",
+"bitter gourd": "Momordica charantia",    
 "moringa": "Moringa oleifera",
 "mulberry": "Morus spp",
 "banana": "Musa acuminata",
