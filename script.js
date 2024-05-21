@@ -70,7 +70,7 @@ const genusList = {
 "sweet orange": "Citrus sinensis",
 "mandarin": "Citrus veticulata",
 "ivy gourd": "Coccinia grandis",
-"tindly": "Coccinia grandis"
+"tindly": "Coccinia grandis",
 "coconut": "Cocos nucifera",
 "coffee": "Coffee spp",
 "taro": "Colocasia spp",
@@ -136,7 +136,7 @@ const genusList = {
 "drumstick": "Moringa oleifera",
 "mulberry": "Morus spp",
 "banana": "Musa acuminata",
-"banana leaves": "Musa acuminata"
+"banana leaves": "Musa acuminata",
 "plantain": "Musa paradisiaca",
 "green banana": "Musa paradisiaca",
 "abaca": "Musa textilis",
