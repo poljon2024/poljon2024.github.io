@@ -1,6 +1,7 @@
 const genusList = {
 
 "okra": "Abelmoschus esculentus",
+"ladies finger": "Abelmoschus esculentus",
 "sapodilla": "Achras sapota",
 "kiwi": "Actinidia chinensis",
 "button Mushroom": "Agaricus bisporus",
