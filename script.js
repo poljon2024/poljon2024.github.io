@@ -68,7 +68,7 @@ const genusList = {
 "tangerine": "Citrus reticulata",
 "sweet Orange": "Citrus sinensis",
 "mandarin": "Citrus veticulata",
-"ivy Gourd": "Coccinia grandis",
+"ivy gourd": "Coccinia grandis",
 "coconut": "Cocos nucifera",
 "coffee": "Coffee spp",
 "taro": "Colocasia spp",
