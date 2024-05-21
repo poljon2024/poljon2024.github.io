@@ -244,9 +244,13 @@ function addToTable() {
         const cell5 = newRow.insertCell(4);
 
         cell1.innerText = genus;
+        cell1.setAttribute('data-label','Genus');
         cell2.innerText = name;
+        cell2.setAttribute('data-label', 'Name');
         cell3.innerText = quantity;
+        cell3.setAttribute('data-label', 'Quantity');
         cell4.innerText = kilograms;
+        cell4.setAttribute('data-label', 'Kilograms');
 
         const copyButton = document.createElement('button');
         copyButton.textContent = 'Copy';
