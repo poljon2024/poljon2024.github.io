@@ -333,6 +333,21 @@ document.getElementById('addTab').addEventListener('keypress', function(event) {
     }
 });
 
+document.getElementById('randomQuantityInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        calculateDifference();
+
+    }
+});
+
+document.getElementById('randomKilogramInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        calculateDifference();
+
+    }
+});
+
+
 function clearData() {
     
     document.getElementById('searchInput').value = '';
