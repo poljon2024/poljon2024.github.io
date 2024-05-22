@@ -230,7 +230,6 @@ function searchGenus() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const genus = genusList[input];
     document.getElementById('genusDisplay').innerText = genus ? genus : 'Not Found';
-    
 }
 
 function addToTable() {
@@ -244,7 +243,7 @@ function addToTable() {
     document.getElementById('quantityInput').value = '';
     document.getElementById('kilogramInput').value = '';
 
-    if (genus &&name && quantity && kilograms) {
+    if (genus && name && quantity && kilograms) {
         const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
         const newRow = table.insertRow();
 
@@ -272,7 +271,7 @@ function addToTable() {
 
         cell5.appendChild(document.createTextNode(' '));
 
-     const deleteButton = document.createElement('button');
+        const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.onclick = function() {
             deleteRow(newRow);
@@ -285,7 +284,7 @@ function addToTable() {
 
 function deleteRow(row) {
     const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
-    table.deleteRow(row.rowIndex - 1);
+    table.deleteRow(row.rowIndex - 1); 
     updateSummary();
 }
 
@@ -318,6 +317,7 @@ function calculateDifference() {
     document.getElementById('kilogramsDifference').innerText = kilogramsDifference;
 }
 
+
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         searchGenus();
@@ -334,7 +334,7 @@ document.getElementById('addTab').addEventListener('keypress', function(event) {
 });
 
 function clearData() {
-   
+    
     document.getElementById('searchInput').value = '';
     document.getElementById('genusDisplay').innerText = '';
 
@@ -346,7 +346,6 @@ function clearData() {
     const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
     table.innerHTML = '';
 
-
     document.getElementById('totalQuantity').innerText = '0';
     document.getElementById('totalKilograms').innerText = '0';
 
@@ -354,10 +353,11 @@ function clearData() {
     document.getElementById('randomQuantityInput').value = '';
     document.getElementById('randomKilogramInput').value = '';
 
-  
+    
     document.getElementById('quantityDifference').innerText = '0';
     document.getElementById('kilogramsDifference').innerText = '0';
 }
+
 function copyToClipboard(text, button) {
     const tempInput = document.createElement('input');
     tempInput.value = text;
@@ -366,17 +366,17 @@ function copyToClipboard(text, button) {
     document.execCommand('copy');
     document.body.removeChild(tempInput);
     
-   
+    
     button.textContent = 'Copied';
     button.disabled = true;
     button.style.backgroundColor = '#7FFF00'; 
     
-   
+    
     setTimeout(function() {
         button.textContent = 'Copy';
         button.disabled = false;
-        button.style.backgroundColor = '';
-    }, 500);
+        button.style.backgroundColor = ''; 
+    }, 500); 
 }
 
 document.addEventListener("keydown", function (event){
@@ -385,5 +385,19 @@ document.addEventListener("keydown", function (event){
     }
     if(event.keyCode == 123){
        event.preventDefault();
+    }
+});
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    const input = this.value.toLowerCase();
+    const datalist = document.getElementById('suggestions');
+    datalist.innerHTML = '';
+
+    for (const [key, value] of Object.entries(genusList)) {
+        if (key.toLowerCase().startsWith(input)) {
+            const option = document.createElement('option');
+            option.value = key;
+            datalist.appendChild(option);
+        }
     }
 });
