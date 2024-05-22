@@ -42,7 +42,7 @@ const genusList = {
 "mustard": "Brassica spp",
 "pigeon Pea": "Cajanus cajan",
 "tea": "Camellia sinensis",
-"bell Pepper": "Capsicum annuum",
+"bell pepper": "Capsicum annuum",
 "pepper": "Capsicum spp",
 "capsicum":"Capsicumm annuum",
 "papaya": "Carica papaya",
