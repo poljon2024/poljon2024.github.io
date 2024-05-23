@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>GENUS NAME TRACKER</h1>
+        <h1>Fruits and Vegetables Genus Finder</h1>
         <div class="input-section">
             <input list="suggestions" type="text" id="searchInput" placeholder="Enter fruit or vegetable name">
             <datalist id="suggestions"></datalist>
@@ -17,8 +17,7 @@
         </div>
         <div id="addTab" class="genus-section">
             <p id="genusName">Genus: <span id="genusDisplay"></span></p>
-            <input type="number" id="quantityInput" placeholder="Enter quantity" min="1" >
-            <input type="number" id="kilogramInput" placeholder="Enter kilograms" step="0.1" min="0">
+
             <button onclick="addToTable()">Add</button>
         </div>
         <table id="resultTable">
@@ -26,6 +25,41 @@
                 <tr>
                     <th>Genus</th>
                     <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="summary-section">
+           
+            <div class="random-section">
+                <input type="number" id="randomQuantityInput" placeholder="Enter quantity" min="1" hidden>
+                <input type="number" id="randomKilogramInput" placeholder="Enter kilograms" step="0.1" min="0" hidden>
+            </div>
+            <p> <span id="quantityDifference" hidden>0</span></p>
+            <p> <span id="kilogramsDifference" hidden>0</span></p>
+        </div>
+        <div class="clear-section">
+            <button onclick="clearData()">Clear</button>
+        </div>
+    </div>
+
+
+
+
+<div class="container2">
+        <h1>Calculator</h1>
+        
+        <div id="addTab2" class="genus-section2">
+    
+            <input type="number" id="quantityInput2" placeholder="Enter quantity" min="1" >
+            <input type="number" id="kilogramInput2" placeholder="Enter kilograms" step="0.1" min="0">
+            <button onclick="addToTable2()">Add</button>
+        </div>
+        <table id="resultTable2">
+            <thead>
+                <tr>
                     <th>Quantity</th>
                     <th>Kilograms</th>
                     <th>Action</th>
@@ -34,21 +68,22 @@
             <tbody>
             </tbody>
         </table>
-        <div class="summary-section">
-            <p>Total Quantity: <span id="totalQuantity">0</span></p>
-            <p>Total Kilograms: <span id="totalKilograms">0</span></p>
-            <div class="random-section">
-                <input type="number" id="randomQuantityInput" placeholder="Enter quantity" min="1">
-                <input type="number" id="randomKilogramInput" placeholder="Enter kilograms" step="0.1" min="0">
-                <button onclick="calculateDifference()">Calculate Difference</button>
+        <div class="summary-section2">
+            <p>Total Quantity: <span id="totalQuantity2">0</span></p>
+            <p>Total Kilograms: <span id="totalKilograms2">0</span></p>
+            <div class="random-section2">
+                <input type="number" id="randomQuantityInput2" placeholder="Enter quantity" min="1">
+                <input type="number" id="randomKilogramInput2" placeholder="Enter kilograms" step="0.1" min="0">
+                <button onclick="calculateDifference2()">Calculate Difference</button>
             </div>
-            <p>Weights less than 100kg in Quantity: <span id="quantityDifference">0</span></p>
-            <p>Weights less than 100kg in Kilograms: <span id="kilogramsDifference">0</span></p>
+            <p>Weights less than 100kg in Quantity: <span id="quantityDifference2">0</span></p>
+            <p>Weights less than 100kg in Kilograms: <span id="kilogramsDifference2">0</span></p>
         </div>
-        <div class="clear-section">
-            <button onclick="clearData()">Clear</button>
+        <div class="clear-section2">
+            <button onclick="clearData2()">Clear</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
