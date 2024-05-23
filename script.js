@@ -416,3 +416,130 @@ document.getElementById('searchInput').addEventListener('input', function() {
         }
     }
 });
+
+function addToTable2() {
+    
+    const quantity = document.getElementById('quantityInput2').value;
+    const kilograms = document.getElementById('kilogramInput2').value;
+
+    document.getElementById('quantityInput2').value = '';
+    document.getElementById('kilogramInput2').value = '';
+
+    if (quantity && kilograms) {
+        const table = document.getElementById('resultTable2').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+
+        cell1.innerText = quantity;
+        cell1.setAttribute('data-label', 'Quantity');
+        cell2.innerText = kilograms;
+        cell2.setAttribute('data-label', 'Kilograms');
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+            deleteRow2(newRow);
+        };
+        cell3.appendChild(deleteButton);
+
+        updateSummary2();
+    }
+}
+
+function deleteRow2(row) {
+    const table = document.getElementById('resultTable2').getElementsByTagName('tbody')[0];
+    table.deleteRow(row.rowIndex - 1); 
+    updateSummary2();
+}
+
+function updateSummary2() {
+    const table = document.getElementById('resultTable2').getElementsByTagName('tbody')[0];
+    let totalQuantity = 0;
+    let totalKilograms = 0;
+
+    for (let row of table.rows) {
+        const quantity = parseFloat(row.cells[0].innerText);
+        const kilograms = parseFloat(row.cells[1].innerText);
+        totalQuantity += quantity;
+        totalKilograms += kilograms;
+    }
+
+    document.getElementById('totalQuantity2').innerText = totalQuantity;
+    document.getElementById('totalKilograms2').innerText = totalKilograms; 
+}
+
+function calculateDifference2() {
+    const totalQuantity = parseInt(document.getElementById('totalQuantity2').innerText);
+    const totalKilograms = parseFloat(document.getElementById('totalKilograms2').innerText);
+    const randomQuantity = parseInt(document.getElementById('randomQuantityInput2').value);
+    const randomKilograms = parseFloat(document.getElementById('randomKilogramInput2').value);
+
+    const quantityDifference = randomQuantity - totalQuantity;
+    const kilogramsDifference = randomKilograms - totalKilograms;
+
+    document.getElementById('quantityDifference2').innerText = quantityDifference;
+    document.getElementById('kilogramsDifference2').innerText = kilogramsDifference;
+}
+
+document.getElementById('addTab2').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        addToTable2();
+
+        document.getElementById('quantityInput2').focus();
+    }
+});
+
+document.getElementById('randomQuantityInput2').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        calculateDifference2();
+    }
+});
+
+document.getElementById('randomKilogramInput2').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        calculateDifference2();
+    }
+});
+
+function clearData2() {
+    document.getElementById('quantityInput2').value = '';
+    document.getElementById('kilogramInput2').value = '';
+
+    const table = document.getElementById('resultTable2').getElementsByTagName('tbody')[0];
+    table.innerHTML = '';
+
+    document.getElementById('totalQuantity2').innerText = '0';
+    document.getElementById('totalKilograms2').innerText = '0';
+
+    document.getElementById('randomQuantityInput2').value = '';
+    document.getElementById('randomKilogramInput2').value = '';
+
+    document.getElementById('quantityDifference2').innerText = '0';
+    document.getElementById('kilogramsDifference2').innerText = '0';
+}
+
+document.addEventListener("keydown", function (event){
+    if (event.ctrlKey){
+       event.preventDefault();
+    }
+    if(event.keyCode == 123){
+       event.preventDefault();
+    }
+});
+
+document.getElementById('searchInput2').addEventListener('input', function() {
+    const input = this.value.toLowerCase();
+    const datalist = document.getElementById('suggestions2');
+    datalist.innerHTML = '';
+
+    for (const [key, value] of Object.entries(genusList)) {
+        if (key.toLowerCase().startsWith(input)) {
+            const option = document.createElement('option');
+            option.value = key;
+            datalist.appendChild(option);
+        }
+    }
+});
