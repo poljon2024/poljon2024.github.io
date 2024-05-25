@@ -25,7 +25,7 @@ const genusList = {
     "chervil": "Anthriscus cerefolium",
     "celery": "Apium graveolens",
     "peanut": "Arachis hypogaea",
-    "areca Nut": "Areca catechu",
+    "areca nut": "Areca catechu",
     "horseradish": "Armoracia rusticana",
     "arracacha": "Arracacia xanthorhiza",
     "tarragon": "Artemisia dracunculus",
