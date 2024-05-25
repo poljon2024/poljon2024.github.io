@@ -232,49 +232,85 @@ function searchGenus() {
 
 function addToTable() {
     const genus = document.getElementById('genusDisplay').innerText;
-    const name = document.getElementById('searchInput').value; 
+    const name = document.getElementById('searchInput').value;
+    
 
+    
+
+    // Check if genus is found
+    if (genus === 'Not Found' || genus === '') {
+        alert('Please enter a valid fruit or vegetable name.');
+        return;
+    }
 
     document.getElementById('searchInput').value = '';
     document.getElementById('genusDisplay').innerText = '';
-    
 
-    if (genus && name) {
-        const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow();
+    const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
 
-        const cell1 = newRow.insertCell(0);
-        const cell2 = newRow.insertCell(1);
-        const cell3 = newRow.insertCell(2);
-       
-        cell1.innerText = genus;
-        cell1.setAttribute('data-label','Genus');
-        cell2.innerText = name;
-        cell2.setAttribute('data-label', 'Name');
+    const cell1 = newRow.insertCell(0);
+    const cell2 = newRow.insertCell(1);
+    const cell3 = newRow.insertCell(2);
+    const cell4 = newRow.insertCell(3);
+    const cell5 = newRow.insertCell(4);
 
-        const copyButton = document.createElement('button');
-        copyButton.textContent = 'Copy';
-        copyButton.onclick = function() {
-            copyToClipboard(genus, copyButton);
-        };
-        cell3.appendChild(copyButton);
+    cell1.innerText = genus;
+    cell1.setAttribute('data-label', 'Genus');
+    cell2.innerText = name;
+    cell2.setAttribute('data-label', 'Name');
 
-        cell3.appendChild(document.createTextNode(' '));
+    const quantityInput = document.createElement('input');
+    quantityInput.type = 'number';
+    quantityInput.min = '0';
+    quantityInput.value = '';
+    quantityInput.oninput = updateSummary;
+    cell3.appendChild(quantityInput);
+    cell3.setAttribute('data-label', 'Quantity');
 
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.onclick = function() {
-            deleteRow(newRow);
-        };
-        cell3.appendChild(deleteButton);
+    const kilogramInput = document.createElement('input');
+    kilogramInput.type = 'number';
+    kilogramInput.step = '0.1';
+    kilogramInput.min = '0';
+    kilogramInput.value = '';
+    kilogramInput.oninput = updateSummary;
+    kilogramInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            const nextRow = newRow.nextElementSibling;
+            if (nextRow) {
+                const nextQuantityInput = nextRow.cells[2].getElementsByTagName('input')[0];
+                nextQuantityInput.focus();
+            }
+        }
+    });
+    cell4.appendChild(kilogramInput);
+    cell4.setAttribute('data-label', 'Kilograms');
 
-        updateSummary();
-    }
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'button-container';
+
+    const copyButton = document.createElement('button');
+    copyButton.textContent = 'Copy';
+    copyButton.onclick = function() {
+        copyToClipboard(genus, copyButton);
+    };
+    buttonContainer.appendChild(copyButton);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.onclick = function() {
+        deleteRow(newRow);
+    };
+    buttonContainer.appendChild(deleteButton);
+
+    cell5.appendChild(buttonContainer);
+
+    updateSummary();
 }
 
 function deleteRow(row) {
     const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
-    table.deleteRow(row.rowIndex - 1); 
+    table.deleteRow(row.rowIndex - 1);
     updateSummary();
 }
 
@@ -284,14 +320,18 @@ function updateSummary() {
     let totalKilograms = 0;
 
     for (let row of table.rows) {
-        const quantity = parseFloat(row.cells[2].innerText);
-        const kilograms = parseFloat(row.cells[3].innerText);
+        const quantityInput = row.cells[2].querySelector('input[type="number"]');
+        const kilogramsInput = row.cells[3].querySelector('input[type="number"]');
+
+        const quantity = parseFloat(quantityInput.value) || 0;
+        const kilograms = parseFloat(kilogramsInput.value) || 0;
+
         totalQuantity += quantity;
         totalKilograms += kilograms;
     }
 
     document.getElementById('totalQuantity').innerText = totalQuantity;
-    document.getElementById('totalKilograms').innerText = totalKilograms; 
+    document.getElementById('totalKilograms').innerText = totalKilograms;
 }
 
 function calculateDifference() {
@@ -305,56 +345,25 @@ function calculateDifference() {
 
     document.getElementById('quantityDifference').innerText = quantityDifference;
     document.getElementById('kilogramsDifference').innerText = kilogramsDifference;
-
-
-
 }
 
-
-document.getElementById('searchInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        searchGenus();
-
-        document.getElementById('quantityInput').focus();
-    }
-});
-document.getElementById('addTab').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        addToTable();
-
-        document.getElementById('searchInput').focus();
-    }
-});
-
-document.getElementById('randomQuantityInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        calculateDifference();
-
-    }
-});
-
-document.getElementById('randomKilogramInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        calculateDifference();
-
-    }
-});
-
-
-
-
 function clearData() {
-    
     document.getElementById('searchInput').value = '';
     document.getElementById('genusDisplay').innerText = '';
+
+    
 
     const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
     table.innerHTML = '';
 
-    
-   
+    document.getElementById('totalQuantity').innerText = '0';
+    document.getElementById('totalKilograms').innerText = '0';
 
-   
+    document.getElementById('randomQuantityInput').value = '';
+    document.getElementById('randomKilogramInput').value = '';
+
+    document.getElementById('quantityDifference').innerText = '';
+    document.getElementById('kilogramsDifference').innerText= '';
 }
 
 function copyToClipboard(text, button) {
@@ -364,29 +373,17 @@ function copyToClipboard(text, button) {
     tempInput.select();
     document.execCommand('copy');
     document.body.removeChild(tempInput);
-    
-    
+
     button.textContent = 'Copied';
     button.disabled = true;
-    button.style.backgroundColor = '#7FFF00'; 
-    
-    
+    button.style.backgroundColor = '#7FFF00';
+
     setTimeout(function() {
         button.textContent = 'Copy';
         button.disabled = false;
-        button.style.backgroundColor = ''; 
-    }, 500); 
+        button.style.backgroundColor = '';
+    }, 500);
 }
-
-document.addEventListener("keydown", function (event){
-    if (event.ctrlKey){
-       event.preventDefault();
-    }
-    if(event.keyCode == 123){
-       event.preventDefault();
-    }
-});
-
 
 document.getElementById('searchInput').addEventListener('input', function() {
     const input = this.value.toLowerCase();
@@ -402,129 +399,17 @@ document.getElementById('searchInput').addEventListener('input', function() {
     }
 });
 
-function addToTable2() {
-    
-    const quantity = document.getElementById('quantityInput2').value;
-    const kilograms = document.getElementById('kilogramInput2').value;
-
-    document.getElementById('quantityInput2').value = '';
-    document.getElementById('kilogramInput2').value = '';
-
-    if (quantity && kilograms) {
-        const table = document.getElementById('resultTable2').getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow();
-
-        const cell1 = newRow.insertCell(0);
-        const cell2 = newRow.insertCell(1);
-        const cell3 = newRow.insertCell(2);
-
-        cell1.innerText = quantity;
-        cell1.setAttribute('data-label', 'Quantity');
-        cell2.innerText = kilograms;
-        cell2.setAttribute('data-label', 'Kilograms');
-
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.onclick = function() {
-            deleteRow2(newRow);
-        };
-        cell3.appendChild(deleteButton);
-
-        updateSummary2();
-    }
-}
-
-function deleteRow2(row) {
-    const table = document.getElementById('resultTable2').getElementsByTagName('tbody')[0];
-    table.deleteRow(row.rowIndex - 1); 
-    updateSummary2();
-}
-
-function updateSummary2() {
-    const table = document.getElementById('resultTable2').getElementsByTagName('tbody')[0];
-    let totalQuantity = 0;
-    let totalKilograms = 0;
-
-    for (let row of table.rows) {
-        const quantity = parseFloat(row.cells[0].innerText);
-        const kilograms = parseFloat(row.cells[1].innerText);
-        totalQuantity += quantity;
-        totalKilograms += kilograms;
-    }
-
-    document.getElementById('totalQuantity2').innerText = totalQuantity;
-    document.getElementById('totalKilograms2').innerText = totalKilograms; 
-}
-
-function calculateDifference2() {
-    const totalQuantity = parseInt(document.getElementById('totalQuantity2').innerText);
-    const totalKilograms = parseFloat(document.getElementById('totalKilograms2').innerText);
-    const randomQuantity = parseInt(document.getElementById('randomQuantityInput2').value);
-    const randomKilograms = parseFloat(document.getElementById('randomKilogramInput2').value);
-
-    const quantityDifference = randomQuantity - totalQuantity;
-    const kilogramsDifference = randomKilograms - totalKilograms;
-
-    document.getElementById('quantityDifference2').innerText = quantityDifference;
-    document.getElementById('kilogramsDifference2').innerText = kilogramsDifference;
-}
-
-document.getElementById('addTab2').addEventListener('keypress', function(event) {
+document.getElementById('searchInput').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        addToTable2();
-
-        document.getElementById('quantityInput2').focus();
+        event.preventDefault();
+        searchGenus();
     }
 });
 
-document.getElementById('randomQuantityInput2').addEventListener('keypress', function(event) {
+document.getElementById('addTab').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        calculateDifference2();
-    }
-});
-
-document.getElementById('randomKilogramInput2').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        calculateDifference2();
-    }
-});
-
-function clearData2() {
-    document.getElementById('quantityInput2').value = '';
-    document.getElementById('kilogramInput2').value = '';
-
-    const table = document.getElementById('resultTable2').getElementsByTagName('tbody')[0];
-    table.innerHTML = '';
-
-    document.getElementById('totalQuantity2').innerText = '0';
-    document.getElementById('totalKilograms2').innerText = '0';
-
-    document.getElementById('randomQuantityInput2').value = '';
-    document.getElementById('randomKilogramInput2').value = '';
-
-    document.getElementById('quantityDifference2').innerText = '0';
-    document.getElementById('kilogramsDifference2').innerText = '0';
-}
-
-document.addEventListener("keydown", function (event){
-    if (event.ctrlKey){
-       event.preventDefault();
-    }
-    if(event.keyCode == 123){
-       event.preventDefault();
-    }
-});
-
-document.getElementById('searchInput2').addEventListener('input', function() {
-    const input = this.value.toLowerCase();
-    const datalist = document.getElementById('suggestions2');
-    datalist.innerHTML = '';
-
-    for (const [key, value] of Object.entries(genusList)) {
-        if (key.toLowerCase().startsWith(input)) {
-            const option = document.createElement('option');
-            option.value = key;
-            datalist.appendChild(option);
-        }
+        event.preventDefault();
+        addToTable();
+        document.getElementById('searchInput').focus();
     }
 });
