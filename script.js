@@ -413,3 +413,11 @@ document.getElementById('addTab').addEventListener('keydown', function(event) {
         document.getElementById('searchInput').focus();
     }
 });
+document.getElementById('addDifference').addEventListener('keydown', function(event){
+    if (event.key === 'Enter'){
+        event.preventDefault();
+        calculateDifference();
+    }
+});
+
+
