@@ -233,6 +233,7 @@ function searchGenus() {
 function addToTable() {
     const genus = document.getElementById('genusDisplay').innerText;
     const name = document.getElementById('searchInput').value;
+    document.getElementById('searchInput').focus();
     
 
     
@@ -403,6 +404,7 @@ document.getElementById('searchInput').addEventListener('keydown', function(even
     if (event.key === 'Enter') {
         event.preventDefault();
         searchGenus();
+        document.getElementById('tableButton').focus();
     }
 });
 
