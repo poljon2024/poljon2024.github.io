@@ -5,7 +5,7 @@ const genusList = {
     "ladies finger": "Abelmoschus esculentus",
     "sapodilla": "Achras sapota",
     "kiwi": "Actinidia chinensis",
-    "button Mushroom": "Agaricus bisporus",
+    "button mushroom": "Agaricus bisporus",
     "mushroom": "Agaricus spp",
     "green agave": "Agave atrovirens",
     "tung tree": "Aleurites spp",
