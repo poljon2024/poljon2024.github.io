@@ -221,8 +221,8 @@ const genusList = {
     "beans" : "Phaseolus vulgaris",
     "courgettes" : "Cucurbita pepo",
     "ride gourd": "Luffa Acutangula",
+    "turnip" : "Brassica rapa",
     
-    // Add more fruits and vegetables with their genus here
 };
 
 function searchGenus() {
