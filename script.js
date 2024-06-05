@@ -223,6 +223,7 @@ const genusList = {
     "ride gourd": "Luffa Acutangula",
     "turnip" : "Brassica rapa",
     "broccolini" : "Brassica oleracea var. botrytis",
+    "banana shallots" : "Allium Cepa",
     
 };
 
