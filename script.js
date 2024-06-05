@@ -222,6 +222,7 @@ const genusList = {
     "courgettes" : "Cucurbita pepo",
     "ride gourd": "Luffa Acutangula",
     "turnip" : "Brassica rapa",
+    "broccolini" : "Brassica oleracea var. botrytis",
     
 };
 
