@@ -332,3 +332,8 @@ th, td {
         font-size: 16px;
     }
 }
+.resultDifference
+{
+    font-weight: bold;
+    font-size: 30px;
+}
