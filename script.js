@@ -226,6 +226,8 @@ const genusList = {
     "banana shallots" : "Allium Cepa",
     "kimono" : "Cucumis metuliferus",
     "kai lan baby" : "Brassica oleracea var. alboglabra",
+    "tapioca" : "Manihot esculenta",
+    "karapincha" : "Murraya koenigii",
     
 };
 
