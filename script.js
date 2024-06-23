@@ -1,7 +1,7 @@
 const genusList = {
 
     
-"okra": "Abelmoschus esculentus",
+    "okra": "Abelmoschus esculentus",
     "ladies finger": "Abelmoschus esculentus",
     "sapodilla": "Achras sapota",
     "kiwi": "Actinidia chinensis",
@@ -45,7 +45,7 @@ const genusList = {
     "tea": "Camellia sinensis",
     "bell pepper": "Capsicum annuum",
     "pepper": "Capsicum spp",
-    "capsicum":"Capsicumm annuum",
+    "capsicum":"Capsicum annuum",
     "papaya": "Carica papaya",
     "caraway": "Carum carvi",
     "pecan": "Carya illinoensis",
@@ -184,7 +184,7 @@ const genusList = {
     "black salsify": "Scorzonera hispanica",
     "chayote": "Sechium edule",
     "sesame": "Sesamum indicum",
-    "potato": "Solanum tuberosum",
+    "potato": "Solamum tuberosum",
     "tomato": "Solanum lycopersicum",
     "eggplant": "Solanum melongena",
     "pepino": "Solanum muricatum",
