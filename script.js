@@ -123,7 +123,7 @@ const genusList = {
     "lupin": "Lupinus spp",
     "macadamia": "Macadamia spp",
     "apple": "Malus domestica",
-    "crab Apple": "Malus sylvestris",
+    "crab apple": "Malus sylvestris",
     "mango": "Mangifera indica",
     "yuca": "Manihot esculenta",
     "chico fruit": "Manilkara zapota",
@@ -228,6 +228,8 @@ const genusList = {
     "kai lan baby" : "Brassica oleracea var. alboglabra",
     "tapioca" : "Manihot esculenta",
     "karapincha" : "Murraya koenigii",
+    "topinambur" : "Helianthus tuberosus",
+    "dushi button" : "Phyla Dulcis",
     
 };
 
