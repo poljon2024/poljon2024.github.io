@@ -221,6 +221,7 @@ th, td {
 
 .random-section button {
     padding: 10px 20px;
+    margin-bottom: 10px;
     border: none;
     background-color: #56ab2f;
     color: white;
