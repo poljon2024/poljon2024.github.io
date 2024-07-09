@@ -230,7 +230,7 @@ const genusList = {
     "karapincha" : "Murraya koenigii",
     "topinambur" : "Helianthus tuberosus",
     "dushi button" : "Phyla Dulcis",
-    
+    "shallots oval" : "Allium ascalonicum",
 };
 
 function searchGenus() {
