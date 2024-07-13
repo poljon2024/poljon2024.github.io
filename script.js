@@ -111,7 +111,7 @@ const genusList = {
     "hops": "Humulus lupulus",
     "dragon fruit": "Hylocereus costaricensis",
     "yerba Mate": "Ilex paraguariensis",
-    "sweet potato": "Ipomoea batatas",
+    "sweet potato": "Iopmoea batatas",
     "walnut": "Juglans spp",
     "lettuce": "Lactuca sativa",
     "bottle gourd": "Lagenaria siceraria",
