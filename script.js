@@ -231,6 +231,7 @@ const genusList = {
     "topinambur" : "Helianthus tuberosus",
     "dushi button" : "Phyla Dulcis",
     "shallots oval" : "Allium ascalonicum",
+    "jackfruit" : "Artocarpus heterophyllus"
 };
 
 function searchGenus() {
