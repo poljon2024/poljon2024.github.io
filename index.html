@@ -8,17 +8,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Fruits and Vegetables Genus Finder</h1>
+    <!-- Fixed search bar -->
+    <div class="search-container">
         <div class="input-section">
             <input list="suggestions" type="text" id="searchInput" placeholder="Enter fruit or vegetable name">
             <datalist id="suggestions"></datalist>
             <button onclick="searchGenus()">Search</button>
+
+            <div id="addTab" class="genus-section">
+                <p id="genusName">Genus: <span id="genusDisplay"></span></p>
+                <button id="tableButton" onclick="addToTable()">Add</button>
+            </div>
         </div>
-        <div id="addTab" class="genus-section">
-            <p id="genusName">Genus: <span id="genusDisplay"></span></p>
-            <button id='tableButton' onclick="addToTable()">Add</button>
-        </div>
+    </div>
+    <div class="container">
+        <h1>Fruits and Vegetables Genus Finder</h1>
         <table id="resultTable">
             <thead>
                 <tr>
@@ -35,13 +39,13 @@
         <div class="summary-section">
             <p>Total Quantity: <span id="totalQuantity">0</span></p>
             <p>Total Kilograms: <span id="totalKilograms">0</span></p>
-            <div id="addDifference"  class="random-section">
+            <div id="addDifference" class="random-section">
                 <input type="number" id="randomQuantityInput" placeholder="Enter random quantity" min="1">
                 <input type="number" id="randomKilogramInput" placeholder="Enter random kilograms" step="0.1" min="0">
                 <button onclick="calculateDifference()">Calculate Difference</button>
             </div>
-            <p>Weight less than 100kg in Quantity: <span class="resultDifference" id="quantityDifference">0</span></p>
-            <p>Weight less than 100kg in Kilograms: <span class="resultDifference" id="kilogramsDifference">0</span></p>
+            <p>Weights less than 100kg in Quantity: <span class="resultDifference" id="quantityDifference">0</span></p>
+            <p>Weights less than 100kg in Kilograms: <span class="resultDifference"  id="kilogramsDifference">0</span></p>
         </div>
         <div class="clear-section">
             <button onclick="clearData()">Clear</button>
