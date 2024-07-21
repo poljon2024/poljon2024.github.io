@@ -1,6 +1,4 @@
 const genusList = {
-
-    
     "okra": "Abelmoschus esculentus",
     "ladies finger": "Abelmoschus esculentus",
     "sapodilla": "Achras sapota",
@@ -232,6 +230,9 @@ const genusList = {
     "dushi button" : "Phyla Dulcis",
     "shallots oval" : "Allium ascalonicum",
     "jackfruit" : "Artocarpus heterophyllus",
+    "cantaloupe" : "Cucumis melo",
+    "rock melon" : "Cucumis melo",
+    
 };
 
 function searchGenus() {
