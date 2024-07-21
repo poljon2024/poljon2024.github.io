@@ -433,4 +433,15 @@ document.getElementById('addDifference').addEventListener('keydown', function(ev
     }
 });
 
+document.addEventListener('keydown', function(event) {
+    if (event.altKey) {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener('keyup', function(event) {
+    if (event.altKey) {
+        event.preventDefault();
+    }
+});
 
