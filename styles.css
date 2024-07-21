@@ -394,3 +394,21 @@ th, td {
     font-weight: bold;
     font-size: 30px;
 }
+
+.copyright {
+    margin-top: 200px;
+    padding-top: 0;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+ }
+ 
+ .copyright a {
+    color: #0de618e8;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+ }
+ 
+ .copyright a:hover {
+    color: #ff3666;
+ }
