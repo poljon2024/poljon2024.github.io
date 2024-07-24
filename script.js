@@ -232,6 +232,9 @@ const genusList = {
     "jackfruit" : "Artocarpus heterophyllus",
     "cantaloupe" : "Cucumis melo",
     "rock melon" : "Cucumis melo",
+    "nectarine" : "Prunus persica var. nucipersica",
+    "kiwano" : "Cucumis metuliferus",
+    
     
 };
 
