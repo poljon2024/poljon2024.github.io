@@ -258,7 +258,7 @@ th, td {
 .button-container {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap; /* Allow buttons to wrap if necessary */
+  /*  flex-wrap: wrap;  Allow buttons to wrap if necessary */
 }
 
 .button-container button {
