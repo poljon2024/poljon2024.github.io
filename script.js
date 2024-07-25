@@ -269,6 +269,7 @@ function addToTable() {
     const cell3 = newRow.insertCell(2);
     const cell4 = newRow.insertCell(3);
     const cell5 = newRow.insertCell(4);
+    const cell6 = newRow.insertCell(5);
 
     cell1.innerText = genus;
     cell1.setAttribute('data-label', 'Genus');
@@ -282,6 +283,28 @@ function addToTable() {
     quantityInput.oninput = updateSummary;
     cell3.appendChild(quantityInput);
     cell3.setAttribute('data-label', 'Quantity');
+
+    const wpiInput = document.createElement('input');
+    wpiInput.type = 'number';
+    wpiInput.step = '0.1';
+    wpiInput.min = '0';
+    wpiInput.value = '';
+    wpiInput.oninput = function() {
+        updateKilograms(newRow); // Call updateKilograms when WPI changes
+    };
+
+    wpiInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            const nextRow = newRow.nextElementSibling;
+            if (nextRow) {
+                const nextQuantityInput = nextRow.cells[2].getElementsByTagName('input')[0];
+                nextQuantityInput.focus();
+            }
+        }
+    });
+    cell5.appendChild(wpiInput);
+    cell5.setAttribute('data-label', 'WPI');
+
 
     const kilogramInput = document.createElement('input');
     kilogramInput.type = 'number';
@@ -298,8 +321,12 @@ function addToTable() {
             }
         }
     });
+
+
     cell4.appendChild(kilogramInput);
     cell4.setAttribute('data-label', 'Kilograms');
+
+    
 
     const buttonContainer = document.createElement('div');
     buttonContainer.className = 'button-container';
@@ -318,10 +345,24 @@ function addToTable() {
     };
     buttonContainer.appendChild(deleteButton);
 
-    cell5.appendChild(buttonContainer);
+    cell6.appendChild(buttonContainer);
 
     updateSummary();
 }
+
+function updateKilograms(row) {
+    
+    const quantityInput = row.cells[2].querySelector('input[type="number"]');
+    const wpiInput = row.cells[4].querySelector('input[type="number"]');
+    const kilogramInput = row.cells[3].querySelector('input[type="number"]');
+    const quantity = parseFloat(quantityInput.value) || 0;
+    const wpi = parseFloat(wpiInput.value) || 0;
+
+    kilogramInput.value = quantity * wpi;
+    updateSummary();
+}
+
+
 
 function deleteRow(row) {
     const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
@@ -329,10 +370,15 @@ function deleteRow(row) {
     updateSummary();
 }
 
+
+
 function updateSummary() {
+
+
     const table = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
     let totalQuantity = 0;
     let totalKilograms = 0;
+
 
     for (let row of table.rows) {
         const quantityInput = row.cells[2].querySelector('input[type="number"]');
@@ -343,6 +389,7 @@ function updateSummary() {
 
         totalQuantity += quantity;
         totalKilograms += kilograms;
+
     }
 
     document.getElementById('totalQuantity').innerText = totalQuantity;
@@ -429,6 +476,7 @@ document.getElementById('addTab').addEventListener('keydown', function(event) {
         document.getElementById('searchInput').focus();
     }
 });
+
 document.getElementById('addDifference').addEventListener('keydown', function(event){
     if (event.key === 'Enter'){
         event.preventDefault();
@@ -445,6 +493,9 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keyup', function(event) {
     if (event.altKey) {
         event.preventDefault();
+    }
+});
+
     }
 });
 
