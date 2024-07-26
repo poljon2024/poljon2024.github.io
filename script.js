@@ -156,7 +156,7 @@ const genusList = {
     "goldenberry": "Physalis peruviana",
     "groundcherry": "Physalis spp",
     "anise": "Pimpinella anisum",
-    "black Pepper": "Piper nigrum",
+    "black pepper": "Piper nigrum",
     "pistachio": "Pistacia spp",
     "pea": "Pisum sativum",
     "chinese potato": "Plectranthus rotundifolius",
