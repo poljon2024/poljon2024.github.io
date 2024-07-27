@@ -234,6 +234,8 @@ const genusList = {
     "rock melon" : "Cucumis melo",
     "nectarine" : "Prunus persica var. nucipersica",
     "kiwano" : "Cucumis metuliferus",
+    "zucchini" : "Cucurbita pepo",
+    "dandelion" : "Taraxacum officinale",
     
     
 };
