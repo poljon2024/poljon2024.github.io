@@ -409,6 +409,8 @@ function calculateDifference() {
 
     document.getElementById('quantityDifference').innerText = quantityDifference;
     document.getElementById('kilogramsDifference').innerText = kilogramsDifference;
+
+     copyToClipboard("Multiple, weights less than 100 kg");
 }
 
 function clearData() {
