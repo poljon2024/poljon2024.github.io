@@ -237,7 +237,7 @@ const genusList = {
     "zucchini" : "Cucurbita pepo",
     "dandelion" : "Taraxacum officinale",
     "affilla cress" : "Pisum sativum",
-    "shiso mix" : "Perilia spp",
+    "shiso mix" : "Perilla spp",
     
     
 };
