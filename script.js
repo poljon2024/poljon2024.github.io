@@ -236,6 +236,8 @@ const genusList = {
     "kiwano" : "Cucumis metuliferus",
     "zucchini" : "Cucurbita pepo",
     "dandelion" : "Taraxacum officinale",
+    "affilla cress" : "Pisum sativum",
+    "shiso mix" : "Perilia spp",
     
     
 };
