@@ -412,7 +412,9 @@ function calculateDifference() {
     document.getElementById('quantityDifference').innerText = quantityDifference;
     document.getElementById('kilogramsDifference').innerText = kilogramsDifference;
 
-     copyToClipboard("Multiple, weights less than 100 kg");
+    copyToClipboard("Multiple, weights less than 100 kg");
+
+
 }
 
 function clearData() {
@@ -467,6 +469,14 @@ document.getElementById('searchInput').addEventListener('input', function() {
     }
 });
 
+// Set up event listener when the document is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('copyButton');
+    
+    button.addEventListener('click', () => {
+        copyToClipboard("I love you");
+    });
+});
 document.getElementById('searchInput').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
@@ -502,3 +512,27 @@ document.addEventListener('keyup', function(event) {
     }
 });
 
+function checkOrientation() {
+    const message = document.querySelector('.landscape-message');
+    const content = document.querySelectorAll('.container, .search-container, .row');
+
+    if (window.innerHeight > window.innerWidth) {
+        // Device is in portrait mode
+        message.style.display = 'block';
+        content.forEach(element => {
+            element.style.display = 'none';
+        });
+    } else {
+        // Device is in landscape mode
+        message.style.display = 'none';
+        content.forEach(element => {
+            element.style.display = 'block';
+        });
+    }
+}
+
+// Initial check
+checkOrientation();
+
+// Check orientation on resize
+window.addEventListener('resize', checkOrientation);
