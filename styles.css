@@ -412,3 +412,40 @@ th, td {
  .copyright a:hover {
     color: #ff3666;
  }
+
+/* Basic styling for portrait message */
+.landscape-message {
+    display: none; /* Hide by default */
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    position: fixed; /* Position fixed to cover the entire viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid rgb(0, 255, 21);
+    border-radius: 10px;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Hide main content in portrait mode */
+@media only screen and (orientation: portrait) {
+    body .container, body .search-container, body .row {
+        display: none; /* Hide all main content in portrait mode */
+    }
+    .landscape-message {
+        display: block; /* Show message in portrait mode */
+    }
+}
+
+/* Ensure main content is visible in landscape mode */
+@media only screen and (orientation: landscape) {
+    body .container, body .search-container, body .row {
+        display: block; /* Show all main content in landscape mode */
+    }
+    .landscape-message {
+        display: none; /* Hide message in landscape mode */
+    }
+}
+
