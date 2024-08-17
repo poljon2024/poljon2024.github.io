@@ -173,7 +173,7 @@ const genusList = {
     "radish": "Raphanus sativus",
     "redcurrant": "Ribes rubrum",
     "currant": "Ribes spp",
-    "wild Rose": "Rosa davurica",
+    "wild rose": "Rosa davurica",
     "rosemary": "Rosmarinus officinalis",
     "bramble": "Rubus spp",
     "raspberry": "Rubus spp",
@@ -238,6 +238,7 @@ const genusList = {
     "dandelion" : "Taraxacum officinale",
     "affilla cress" : "Pisum sativum",
     "shiso mix" : "Perilla spp",
+    "kale" : "Brassica oleracea",
     
     
 };
