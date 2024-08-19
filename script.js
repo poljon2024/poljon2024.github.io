@@ -239,7 +239,7 @@ const genusList = {
     "affilla cress" : "Pisum sativum",
     "shiso mix" : "Perilla spp",
     "kale" : "Brassica oleracea",
-    
+    "mangetout" : "Pisum sativum",
     
 };
 
