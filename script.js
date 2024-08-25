@@ -147,7 +147,7 @@ const genusList = {
     "marjoram": "Origanum majorana",
     "parsnip": "Pastinaca sativa",
     "perilla": "Perilla spp",
-    "avocado": "Persea americana",
+    "avocado": "Persea americona",
     "parsley": "Petroselinum crispum",
     "common bean": "Phaseolus vulgaris",
     "date": "Phoenix dactylifera",
