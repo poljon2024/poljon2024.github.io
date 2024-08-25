@@ -240,6 +240,7 @@ const genusList = {
     "shiso mix" : "Perilla spp",
     "kale" : "Brassica oleracea",
     "mangetout" : "Pisum sativum",
+    "tomatillo" : "Physalis spp",
     
 };
 
