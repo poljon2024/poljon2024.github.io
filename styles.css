@@ -429,23 +429,3 @@ th, td {
     z-index: 1000; /* Ensure it appears above other content */
 }
 
-/* Hide main content in portrait mode */
-@media only screen and (orientation: portrait) {
-    body .container, body .search-container, body .row {
-        display: none; /* Hide all main content in portrait mode */
-    }
-    .landscape-message {
-        display: block; /* Show message in portrait mode */
-    }
-}
-
-/* Ensure main content is visible in landscape mode */
-@media only screen and (orientation: landscape) {
-    body .container, body .search-container, body .row {
-        display: block; /* Show all main content in landscape mode */
-    }
-    .landscape-message {
-        display: none; /* Hide message in landscape mode */
-    }
-}
-
