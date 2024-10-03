@@ -241,6 +241,7 @@ const genusList = {
     "kale" : "Brassica oleracea",
     "mangetout" : "Pisum sativum",
     "tomatillo" : "Physalis spp",
+    "kaki" : "Persimmons",
     
 };
 
