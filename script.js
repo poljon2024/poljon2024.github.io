@@ -242,6 +242,7 @@ const genusList = {
     "mangetout" : "Pisum sativum",
     "tomatillo" : "Physalis spp",
     "kaki" : "Persimmons",
+    "bok choy" : "Brassica spp",
     
 };
 
