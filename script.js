@@ -243,6 +243,7 @@ const genusList = {
     "tomatillo" : "Physalis spp",
     "kaki" : "Persimmons",
     "bok choy" : "Brassica spp",
+    "lychee" : "Litchi chinensis",
     
 };
 
