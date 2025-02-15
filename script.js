@@ -244,6 +244,8 @@ const genusList = {
     "kaki" : "Persimmons",
     "bok choy" : "Brassica spp",
     "lychee" : "Litchi chinensis",
+    "frisee yellow" : "Cichorium endivia",
+    
     
 };
 
