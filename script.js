@@ -245,6 +245,7 @@ const genusList = {
     "bok choy" : "Brassica spp",
     "lychee" : "Litchi chinensis",
     "frisee yellow" : "Cichorium endivia",
+    "swiss chard" : "Beta vulgaris",
     
     
 };
