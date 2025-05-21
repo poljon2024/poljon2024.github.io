@@ -275,6 +275,16 @@ function addToTable() {
         return;
     }
 
+     navigator.clipboard.writeText(genus).catch(err => {
+        // Silent fallback if clipboard API fails
+        const textarea = document.createElement('textarea');
+        textarea.value = genus;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+    });
+
     document.getElementById('searchInput').value = '';
     document.getElementById('genusDisplay').innerText = '';
 
