@@ -247,6 +247,8 @@ const genusList = {
     "lychee" : "Litchi chinensis",
     "frisee yellow" : "Cichorium endivia",
     "swiss chard" : "Beta vulgaris",
+    "spring onion" : "Allium fistulosum",
+    "marrow" : "Cucurbita pepo",
     
     
 };
