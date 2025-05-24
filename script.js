@@ -1,5 +1,5 @@
 const genusList = {
-    "okra": "Abelmoschus esculentus",
+     "okra": "Abelmoschus esculentus",
     "ladies finger": "Abelmoschus esculentus",
     "sapodilla": "Achras sapota",
     "kiwi": "Actinidia chinensis",
@@ -108,7 +108,7 @@ const genusList = {
     "barley": "Hordeum vulgare",
     "hops": "Humulus lupulus",
     "dragon fruit": "Hylocereus costaricensis",
-    "yerba Mate": "Ilex paraguariensis",
+    "yerba mate": "Ilex paraguariensis",
     "sweet potato": "Iopmoea batatas",
     "walnut": "Juglans spp",
     "lettuce": "Lactuca sativa",
@@ -251,6 +251,9 @@ const genusList = {
     "cherry tomato" : " Cherry tomatoes (Solanum lycopersicum)",
     "spring onion" : "Allium fistulosum",
     "marrow" : "Cucurbita pepo",
+    "radicchio rosso" : "Cichorium intybus",
+    "lollo rosso" : "Lactuca Sativa",
+    "lollo bionda" : "Lactuca Sativa",
     
     
 };
