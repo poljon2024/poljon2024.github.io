@@ -75,6 +75,7 @@ const genusList = {
     "taro": "Colocasia spp",
     "congo jute": "Corchorus olitorius",
     "coriander": "Coriandrum sativum",
+    "cilantro": "Coriandrum sativum",
     "hazelnut": "Corylus avellana",
     "melon": "Cucumis melo",
     "honeydew melon": "Cucumis melo Inodorus",
