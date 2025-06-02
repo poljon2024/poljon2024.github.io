@@ -211,7 +211,7 @@ const genusList = {
     "grapes": "Vitis vinifera",
     "tannia": "Xanthosoma sagittifolium",
     "corn": "Zea mays",
-    "ginger": "Zingiber officinale",
+    "ginger": "Zingiber officinalis",
     "jujube": "Ziziphus jujuba",
     "kumquat": "Fortunella margarita",
     "vigna": "Vigna spp",
