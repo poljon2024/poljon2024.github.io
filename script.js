@@ -67,7 +67,7 @@ const genusList = {
     "grapefruit": "Citrus paradisi",
     "tangerine": "Citrus reticulata",
     "sweet orange": "Citrus sinensis",
-    "mandarin": "Citrus veticulata",
+    "mandarin": "Citrus reticulata",
     "ivy gourd": "Coccinia grandis",
     "tindly": "Coccinia grandis",
     "coconut": "Cocos nucifera",
