@@ -41,9 +41,9 @@ const genusList = {
     "mustard": "Brassica spp",
     "pigeon pea": "Cajanus cajan",
     "tea": "Camellia sinensis",
-    "bell pepper": "Capsicum annuum",
-    "pepper": "Capsicum spp",
-    "capsicum":"Capsicum annuum",
+    "bell pepper": "Sweet pepper(Capsicum spp)",
+    "chilli": "Chili pepper(Capsicum spp)",
+    "capsicum":"Sweet pepper(Capsicum spp)",
     "papaya": "Carica papaya",
     "caraway": "Carum carvi",
     "pecan": "Carya illinoensis",
@@ -255,6 +255,8 @@ const genusList = {
     "radicchio rosso" : "Cichorium intybus",
     "lollo rosso" : "Lactuca Sativa",
     "lollo bionda" : "Lactuca Sativa",
+     
+     
     
     
 };
@@ -563,3 +565,4 @@ checkOrientation();
 
 // Check orientation on resize
 window.addEventListener('resize', checkOrientation);
+
