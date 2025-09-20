@@ -299,7 +299,7 @@ th, td {
 
 /* Adjust the width of the input fields inside the table */
 #resultTable input[type="number"] {
-    width: 100px; /* Adjust the width as needed */
+    width: 60px; /* Adjust the width as needed */
 }
 
 @media (max-width: 480px) {
@@ -428,5 +428,6 @@ th, td {
     border-radius: 10px;
     z-index: 1000; /* Ensure it appears above other content */
 }
+
 
 
