@@ -215,7 +215,7 @@ const genusList = {
     "jujube": "Ziziphus jujuba",
     "kumquat": "Fortunella margarita",
     "vigna": "Vigna spp",
-    "passion fruit" : "Perilla spp",
+    "passion fruit" : "Passiflora edulis",
     "blackberries" : "Rubus fruticosus",
     "blackberry" : "Rubus fruticosus",
     "beans" : "Phaseolus vulgaris",
@@ -255,6 +255,8 @@ const genusList = {
     "radicchio rosso" : "Cichorium intybus",
     "lollo rosso" : "Lactuca Sativa",
     "lollo bionda" : "Lactuca Sativa",
+    "curry leaves" : "Murraya koenigi",
+     
      
      
     
@@ -565,4 +567,5 @@ checkOrientation();
 
 // Check orientation on resize
 window.addEventListener('resize', checkOrientation);
+
 
