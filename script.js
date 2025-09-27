@@ -108,7 +108,7 @@ const genusList = {
     "kenaf": "Hibiscus cannabinus",
     "barley": "Hordeum vulgare",
     "hops": "Humulus lupulus",
-    "dragon fruit": "Hylocereus costaricensis",
+    "dragon fruit": "Selenicereus undatus",
     "yerba mate": "Ilex paraguariensis",
     "sweet potato": "Iopmoea batatas",
     "walnut": "Juglans spp",
@@ -184,7 +184,7 @@ const genusList = {
     "black salsify": "Scorzonera hispanica",
     "chayote": "Sechium edule",
     "sesame": "Sesamum indicum",
-    "potato": "Solamum tuberosum",
+    "potato": "Solanum tuberosum",
     "tomato": " Tomatoes (Solanum lycopersicum)",
     "eggplant": "Solanum melongena",
     "pepino": "Solanum muricatum",
@@ -567,6 +567,7 @@ checkOrientation();
 
 // Check orientation on resize
 window.addEventListener('resize', checkOrientation);
+
 
 
 
