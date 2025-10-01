@@ -185,6 +185,7 @@ const genusList = {
     "chayote": "Sechium edule",
     "sesame": "Sesamum indicum",
     "potato": "Solanum tuberosum",
+    "agata": "Solanum tuberosum",
     "tomato": " Tomatoes (Solanum lycopersicum)",
     "eggplant": "Solanum melongena",
     "pepino": "Solanum muricatum",
@@ -567,6 +568,7 @@ checkOrientation();
 
 // Check orientation on resize
 window.addEventListener('resize', checkOrientation);
+
 
 
 
